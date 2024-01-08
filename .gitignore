@@ -1,0 +1,44 @@
+# Arquivos temporários
+*.log
+*.tmp
+*.swp
+*~
+
+# Diretórios
+node_modules/
+dist/
+.cache/
+
+# Arquivos de configuração
+.DS_Store
+Thumbs.db
+
+# Ambientes específicos
+.env
+.env.local
+.env.*.local
+
+# Dependências e módulos
+npm-debug.log
+yarn-error.log
+
+# Arquivos de compilação
+*.js.map
+*.css.map
+
+# Editor específico
+.vscode/
+.idea/
+
+# Arquivos de build
+build/
+bin/
+out/
+
+# Cache e logs
+.cache/
+logs/
+
+# Outros
+*.bak
+*.backup

@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .navbar {
+    position: fixed; /* Define a posição fixa para o menu */
+    top: 0; /* Define o topo como 0 para fixar no topo da página */
+    width: 100%; /* Define a largura como 100% para ocupar a largura da tela */
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000; /* Adiciona uma camada superior para garantir que o menu fique acima do conteúdo */
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+
+  .navbar-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-center button:hover {
+    background-color: #555;
+  }
+
+  .navbar-center label {
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-center label:hover {
+    background-color: #333;
+  }
+  
+  .magic-icon {
+    font-size: 20px;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu li:hover {
+    text-decoration: none;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu li:hover {
+    background-color: #555;
+  }
+  
+  .content {
+    padding: 60px 0 20px; /* Ajusta o padding para garantir que o conteúdo não fique oculto pelo menu */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .button-list {
+    width: 100%;
+    height: 40vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 35px;
+  }
+  
+  .button-list h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .button-list button {
+    display: inline-block;
+    width: calc(30% - 10px);
+    margin: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .button-list button:nth-child(3n+1) {
+    clear: left;
+  }
+  
+  .claro {
+    background-color: #f8f8f8;
+  }
+  
+  .escuro {
+    background-color: #dcdcdc;
+  }

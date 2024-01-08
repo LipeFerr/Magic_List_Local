@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Magic</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./assets/js/I-O.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="magic-icon">Magic Lists</div>
+    </div>
+
+    <div class="navbar-center">
+        <input type="file" id="fileInput" accept=".txt">
+        <button id="uploadButton">Upload</button>
+      </div>
+
+    <div class="navbar-right">
+      <ul class="menu">
+        <li><a href="#mono">Mono Color</a></li>
+        <li><a href="#dual">Dual Color</a></li>
+        <li><a href="#three">Three Color</a></li>
+        <li><a href="#four">Four Color</a></li>
+        <li><a href="#five">Five Color</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="button-list claro" id="mono">
+      <h2>Mono Color</h2>
+    </div>
+  
+    <div class="button-list escuro" id="dual">
+      <h2>Dual Color</h2>
+    </div>
+
+    <div class="button-list claro" id="three">
+      <h2>Three Color</h2>
+    </div>
+
+    <div class="button-list escuro" id="four">
+      <h2>Four Color</h2>
+    </div>
+
+    <div class="button-list claro" id="five">
+      <h2>Five Color</h2>
+    </div>
+  </div>
+
+</body>
+</html>
