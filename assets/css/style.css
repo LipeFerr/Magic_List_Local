@@ -5,14 +5,14 @@ body {
   }
   
   .navbar {
-    position: fixed; /* Define a posição fixa para o menu */
-    top: 0; /* Define o topo como 0 para fixar no topo da página */
-    width: 100%; /* Define a largura como 100% para ocupar a largura da tela */
+    position: fixed;
+    top: 0; 
+    width: 100%; 
     background-color: #333;
     color: white;
     display: flex;
     justify-content: space-between;
-    z-index: 1000; /* Adiciona uma camada superior para garantir que o menu fique acima do conteúdo */
+    z-index: 1000; 
   }
   
   .navbar-left {
@@ -81,29 +81,47 @@ body {
     background-color: #555;
   }
   
-  .content {
-    padding: 60px 0 20px; /* Ajusta o padding para garantir que o conteúdo não fique oculto pelo menu */
+  content {
+    padding: 60px 0 20px; 
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: flex-start;
+  }
+
+  .content {
+    padding: 20px 0 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: flex-start; 
+    margin-top: 60px; 
   }
   
   .button-list {
     width: 100%;
-    height: 40vh;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 20px;
-    padding-top: 35px;
+    margin-bottom: 20px; 
+    display: flex; 
+    flex-wrap: wrap; 
   }
   
-  .button-list h2 {
-    font-size: 18px;
+  
+  /* Adiciona uma regra para ajustar a largura das button-lists conforme o tamanho da tela */
+  @media (min-width: 768px) {
+    .button-list {
+      width: calc(50% - 20px); 
+    }
+  }
+  
+  .button-list h2 { 
     margin-bottom: 10px;
   }
   
   .button-list button {
     display: inline-block;
-    width: calc(30% - 10px);
+    width: calc(48% - 10px);
     margin: 5px;
     padding: 8px 16px;
     cursor: pointer;
@@ -120,3 +138,140 @@ body {
   .escuro {
     background-color: #dcdcdc;
   }
+
+  .button-list {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px; 
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: calc(200px - 20px);
+    height: auto; 
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  h2 {
+    width: 100%; 
+  }
+
+  h4 {
+    top: 0%;
+    margin-bottom: auto;
+    margin-top: 5px;
+  }
+  
+  .tag-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tag-color {
+    height: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: white; 
+    padding: 5px;
+    display: inline-block; 
+    background-color: #B06204; 
+    margin-bottom: 10px; 
+    line-height: 10px; 
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+.download-button,
+.view-button {
+  width: 100%; /* Define a largura para dividir o espaço disponível */
+  padding: 10px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+  
+.download-button:hover,
+.view-button:hover {
+  background-color: #555;
+}
+
+.view-button {
+  right: 0; /* Posiciona o botão "Ver Lista" no lado direito */
+}
+
+.download-button {
+  left: 0; /* Posiciona o botão "Download" no lado esquerdo */
+}
+
+
+.sidebar {
+  width: 13%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  position: fixed;
+  top: 48px; /* Ajuste conforme necessário para evitar sobreposição com o navbar */
+  bottom: 0;
+  overflow-y: auto;
+  left: 0;
+}
+
+.sidebar h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.sidebar label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  margin-top: 10px; /* Adiciona margem ao topo para evitar sobreposição com o navbar */
+  padding-left: 13%;
+}
+
+.content {
+  flex: 1;
+  padding: 1px;
+}
+
+.label-pai {
+  font-size: 14px;
+}
+
+.label-pai .label-filho {
+  font-size: 12px;
+}
+
+.label-pai .label-filho input{
+  width: 11px;
+  height: 11px;
+}
+
+.filter_switch {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: #333;
+  color: #f4f4f4;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  right: 0%;
+}

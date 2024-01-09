@@ -1,5 +1,5 @@
 export function insertCard(card) {
-    const endpointURL = 'http://44.203.181.82:8080/cards/card';
+    const endpointURL = 'http://localhost:8080/cards/card';
   
     const requestOptions = {
       method: 'POST',

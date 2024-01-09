@@ -1,6 +1,6 @@
 
 export function getListCards() {
-    const endpointURL = 'http://44.203.181.82:8080/listCard';
+    const endpointURL = 'http://localhost:8080/listCard';
   
     const requestOptions = {
       method: 'GET',
@@ -24,7 +24,7 @@ export function getListCards() {
   }
 
   export function insertListCard(list) {
-    const endpointURL = 'http://44.203.181.82:8080/listCard/list';
+    const endpointURL = 'http://localhost:8080/listCard/list';
   
     const requestOptions = {
       method: 'POST',

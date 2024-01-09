@@ -10,10 +10,26 @@ export const existingDivs = {
   "Five": document.getElementById("five")
 };
 
+
 // Função para lidar com o clique nos botões
 function handleButtonClick(buttonId) {
   // Exemplo: Imprimir o ID do botão no console
   //console.log('Botão clicado:', buttonId);
+
+  const colorTypeFilter = document.querySelector(`.color-type-filter[data-toggle="${buttonId}"]`);
+
+    if (colorTypeFilter) {
+      colorTypeFilter.classList.toggle('active');
+
+      // Adiciona ou remove a classe 'expanded' para alternar a seta
+      if (colorTypeFilter.classList.contains('active')) {
+          colorTypeFilter.parentElement.classList.add('expanded');
+      } else {
+          colorTypeFilter.parentElement.classList.remove('expanded');
+      }
+
+    }
+
 
   generateList(buttonId)
   .then(jsonData => {
@@ -25,6 +41,7 @@ function handleButtonClick(buttonId) {
   
 }
 
+/*
 // Função para gerar botões dinamicamente
 function generateButton(containerId, buttonId, buttonText) {
   const container = document.getElementById(containerId);
@@ -38,7 +55,51 @@ function generateButton(containerId, buttonId, buttonText) {
     // Chama a função passando o ID do botão
     handleButtonClick(this.id);
   });
+}*/
+
+
+
+// Função para gerar cards dinamicamente
+function generateCards(buttonId, titleList, tagName, color) {
+  // Verificar se tagName existe antes de converter para minúsculas
+  const lowerCaseTagName = tagName ? tagName.toLowerCase() : '';
+  const lowerCasecolor = color ? color.toLowerCase() : '';
+  // Criar o elemento do card
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.style.backgroundColor = '#078E4D'; //'#BDB76B';
+
+  // Adicionar conteúdo ao card
+  card.innerHTML = `
+    <h4>${titleList}</h4>
+    <div class="tag-color">${lowerCaseTagName}</div><br>
+    <button id="btn_d_${buttonId}" class="download-button" style="padding: 10px">Download</button>
+    <button id="btn_v_${buttonId}" class="view-button">View</button>
+  `;
+
+  // Adicionar evento de clique ao botão de download
+  const downloadButton = card.querySelector(`#btn_d_${buttonId}`);
+  if (downloadButton) {
+    downloadButton.addEventListener('click', function () {
+      // Chama a função passando o ID do botão
+      const numero = this.id.replace("btn_d_", "");
+      handleButtonClick(numero);
+    });
+  }
+
+  // Adicionar card à div correspondente com base na cor
+  const contentDiv = document.getElementById(lowerCasecolor);
+  if (contentDiv) {
+    contentDiv.appendChild(card);
+  } else {
+    console.warn(`A div com ID "${lowerCasecolor}" não foi encontrada.`);
+  }
 }
+
+
+
+
+
 
 export function loadListCards () {
 getListCards()
@@ -51,7 +112,10 @@ getListCards()
       if (targetDiv) {
 
         // Adicione os botões diretamente à div alvo aqui
-            generateButton(targetDiv.id, list.id, list.name);
+            //generateButton(targetDiv.id, list.id, list.name);
+            
+            console.log(list);
+            generateCards(list.id, list.name, list.tag_color, list.color);
         } else {
           console.warn(`A lista "${list.name}" não se encaixa em nenhum contexto`);
         }
@@ -77,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 export function clearListCards() {
   // Seleciona todos os botões dentro das divs com a classe "button-list"
-  const buttons = document.querySelectorAll('.button-list button');
+  const buttons = document.querySelectorAll('.button-list .card');
 
   // Para cada botão encontrado
   buttons.forEach(button => {

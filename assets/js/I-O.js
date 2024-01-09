@@ -54,11 +54,11 @@ async function processFileContent(content) {
   
     if (lines.length >= 1) {
       // Processa os dados do ListCard a partir da primeira linha
-      const [listCardName, listCardColor] = lines[0].split(', ');
+      const [listCardName, listCardColor, listTagName] = lines[0].split(', ');
   
       try {
         // Insere o ListCard e aguarda a conclusão
-        const insertedListCard = await insertListCard({ name: listCardName, color: listCardColor });
+        const insertedListCard = await insertListCard({ name: listCardName, color: listCardColor, tag_color: listTagName });
         const listCardId = insertedListCard.id;
   
         for (let index = 1; index < lines.length; index++) {
